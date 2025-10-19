@@ -1,0 +1,27 @@
+train_batch_size: 32
+dev_batch_size: 128
+seed: 0
+# Maximum number of epochs
+max_epoch: 30
+# perform validation after every 2000 iterations
+valid_niter: 2000
+# Report train loss after every 10 iterations
+log_every: 10
+# Early stopping if no improvement after 5 trials
+patience: 5
+
+# AdamW optimizer parameters
+weight_decay: 0.1
+betas: [0.9, 0.95]
+# clip gradients at this value, or disable if == 0.0
+grad_clip: 1.0
+
+# learning rate
+lr: 0.0006
+# learning rate decay settings
+# whether to decay the learning rate
+decay_lr: True
+# fraction of iterations to warm up for
+warmup_percent_iters: 0.1
+# minimum learning rate to decay to
+min_lr: 0.00006

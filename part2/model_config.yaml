@@ -1,0 +1,10 @@
+# GPT-2 like block size
+block_size: 128
+# GPT-2 vocab_size of 50257, padded up to nearest multiple of 64 for efficiency
+vocab_size: 15003
+
+n_layer: 6
+n_head: 6
+n_embed: 192
+
+dropout: 0.1
