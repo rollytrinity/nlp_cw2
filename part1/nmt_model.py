@@ -252,7 +252,6 @@ class NMT(nn.Module):
                     your implementation.
         """
 
-        # TODO: Fix this based on CW
         
         # 1. Apply decoder to Ybar_t and dec_state
         dec_hidden, dec_cell = self.decoder(Ybar_t, dec_state)
