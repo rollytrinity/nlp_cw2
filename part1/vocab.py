@@ -288,14 +288,14 @@ def parse_args():
     parser.add_argument(
         "--train-source-file",
         type=Path,
-        default=Path("..", "multi30k_data", "train.en"),
+        default=Path("multi30k_data", "train.en"),
         help="Path to the train source file, containing source sentences.",
     )
 
     parser.add_argument(
         "--train-target-file",
         type=Path,
-        default=Path("..", "multi30k_data", "train.fr"),
+        default=Path("multi30k_data", "train.fr"),
         help="Path to the train target file, containing gold-standard target sentences.",
     )
 
