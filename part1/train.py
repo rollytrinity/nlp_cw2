@@ -257,14 +257,14 @@ def parse_args():
     parser.add_argument(
         "--model-config",
         type=Path,
-        required=True,
+        default=Path("model_config.yaml"),
         help="Path to the model YAML config.",
     )
 
     parser.add_argument(
         "--train-config",
         type=Path,
-        required=True,
+        default=Path("train_config.yaml"),
         help="Path to the training YAML config.",
     )
 

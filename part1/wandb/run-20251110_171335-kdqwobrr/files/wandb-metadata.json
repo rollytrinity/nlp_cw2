@@ -1,0 +1,32 @@
+{
+  "os": "Windows-11-10.0.26100-SP0",
+  "python": "CPython 3.12.7",
+  "startedAt": "2025-11-10T17:13:35.602298Z",
+  "args": [
+    "--checkpoint-path",
+    "/models/small/"
+  ],
+  "program": "C:\\Users\\gulla\\OneDrive\\Documents\\uni\\nlp\\cw2\\nlp_cw2\\part1\\train.py",
+  "codePath": "part1\\train.py",
+  "codePathLocal": "train.py",
+  "git": {
+    "remote": "https://github.com/rollytrinity/nlp_cw2",
+    "commit": "0ded36f519530d9fb86b1553eb83cc78ba21f596"
+  },
+  "email": "gullandtrinity@gmail.com",
+  "root": "C:\\Users\\gulla\\OneDrive\\Documents\\uni\\nlp\\cw2\\nlp_cw2\\part1",
+  "host": "Trom",
+  "executable": "C:\\Users\\gulla\\OneDrive\\Documents\\uni\\nlp\\cw2\\nlp_cw2\\.venv\\Scripts\\python.exe",
+  "cpu_count": 10,
+  "cpu_count_logical": 12,
+  "disk": {
+    "/": {
+      "total": "510883000320",
+      "used": "396400209920"
+    }
+  },
+  "memory": {
+    "total": "16876888064"
+  },
+  "writerId": "8g5zpqi9w4m7nzm38akx5dkpl8ri7xo9"
+}

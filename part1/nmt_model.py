@@ -265,7 +265,6 @@ class NMT(nn.Module):
         # dec_hidden has a shape of (b, h), enc_hiddens_proj is (b, src_len, h)
         # We want to end up with a shape of (b, src_len)
         e_t = torch.bmm(enc_hiddens_proj, dec_hidden.unsqueeze(2)).squeeze(2)  
-    
 
         # If enc_masks is None, this step should be skipped
         # Use bool() to convert ByteTensor to BoolTensor
