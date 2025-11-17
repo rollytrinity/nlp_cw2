@@ -274,14 +274,12 @@ def parse_args():
     parser.add_argument(
         "--model-config",
         type=Path,
-        required=True,
         default="model_config.yaml",
     )
 
     parser.add_argument(
         "--train-config",
         type=Path,
-        required=True,
         default="train_config.yaml",
     )
 
@@ -344,7 +342,7 @@ def parse_args():
     parser.add_argument(
         "--wandb-project",
         type=str,
-        default="nmt-project",
+        default="CW Part 2",
         help="CW Part 2",
     )
 
