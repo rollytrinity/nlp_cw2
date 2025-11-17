@@ -120,23 +120,38 @@ class CausalSelfAttention(nn.Module):
                     T is the sequence length, C is the embedding dimension.
                 attentions: (optional) Tensor of shape (B, nh, T, T) where nh is the number of heads.
         """
-        B, T, C = x.size()
         ### Your code here (~8-15 lines) ###
-        raise NotImplementedError("Implement the forward method in CausalSelfAttention in model.py")
         # Step 1: Calculate query, key, values for all heads
         # (B, nh, T, hs)
+
+        B, T, C = x.size()
+        nh = self.n_head
+        hs = C // nh 
+
+        Q = self.query(x)
+        V = self.value(x)
+        K = self.key(x)
+
+        Q = Q.view(B, T, nh, hs).transpose(1, 2)
+        K = K.view(B, T, nh, hs).transpose(1, 2)
+        V = V.view(B, T, nh, hs).transpose(1, 2)
       
         # Step 2: Compute attention scores
         # Self-attend: (B, nh, T, hs) x (B, nh, hs, T) -> (B, nh, T, T)
+        scores = torch.matmul(Q, K.transpose(-2, -1)) / math.sqrt(hs)  # (B, nh, T, T)
 
         # Step 3: Masking out the future tokens (causal) and softmax
+        scores = scores.masked_fill(self.mask[:, :, :T, :T] == 0, float('-inf'))
+        attention = torch.softmax(scores, dim=-1)
 
         # Step 4: Compute the attention output
         # (B, nh, T, T) x (B, nh, T, hs) -> (B, nh, T, hs)
+        y = torch.matmul(attention, V)
 
         # Step 5: re-assemble all head outputs side by side
         # (B, T, nh, hs) -> (B, T, C)
-
+        y = y.transpose(1, 2).contiguous().view(B, T, C)  # (B, T, C)
+        y = self.resid_drop(self.proj(y))
         # Step 6: output projection + dropout
         ### End of your code ###
         return GPTAttentionOutput(output=y, attentions=attention)

@@ -275,14 +275,14 @@ def parse_args():
         "--model-config",
         type=Path,
         required=True,
-        help="Path to the model YAML config.",
+        help="model_config.yaml",
     )
 
     parser.add_argument(
         "--train-config",
         type=Path,
         required=True,
-        help="Path to the training YAML config.",
+        help="train_config.yaml",
     )
 
     parser.add_argument(
@@ -345,7 +345,7 @@ def parse_args():
         "--wandb-project",
         type=str,
         default="nmt-project",
-        help="Weights and Biases project name.",
+        help="CW Part 2",
     )
 
     parser.add_argument(
