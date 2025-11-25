@@ -352,7 +352,7 @@ def parse_args():
     parser.add_argument(
         "--source-vocab-size",
         type=int,
-        default=15000,
+        default=14563,
         help="Size of the source vocabulary.",
     )
 
