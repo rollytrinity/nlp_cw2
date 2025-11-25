@@ -329,6 +329,8 @@ if __name__ == "__main__":
     print(f"read in source sentences: {args.train_source_file}")
     print(f"read in target sentences: {args.train_target_file}")
 
+    print(args.source_vocab_size, args.target_vocab_size)
+
     src_sents = get_vocab_list(
         args.train_source_file, source="src", vocab_size=args.source_vocab_size
     )
