@@ -399,7 +399,7 @@ class GPT(nn.Module):
             if output.attentions is not None and attentions is not None:
                 attentions.append(output.attentions)
 
-            if predicted_id == eos_token_id:
+            if (predicted_id == eos_token_id).any():
                 break
 
         return GPTGenerateOutput(sequences=input_ids, attentions=attentions)
